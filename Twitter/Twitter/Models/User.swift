@@ -9,14 +9,42 @@
 import UIKit
 
 class User: NSObject {
-    static var shared: User!
+    private static var _shared: User?
+    static var shared: User? {
+        get {
+            if _shared == nil {
+//                if let data = UserDefaults.standard.object(forKey: "user") as? Data {
+//                    let dictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+//                    _shared = User(dictionary: dictionary)
+//                }
+                _shared = LocalStorage.shared.loadUser()
+            }
+            return _shared
+        }
+        set(new) {
+            _shared = new
+            LocalStorage.shared.saveUser(user: _shared)
+//            let defaults = UserDefaults.standard
+//            if let user = new {
+//                let data = try! JSONSerialization.data(withJSONObject: user.dictionary!, options: [])
+//                defaults.set(data, forKey: "user")
+//            } else {
+//                defaults.set(nil, forKey: "user")
+//            }
+//            defaults.synchronize()
+        }
+    }
     
     var name: String?
     var screenname: String?
     var profileImageUrl: URL?
     var tagline: String?
     
+    var dictionary: NSDictionary?
+    
     init(dictionary: NSDictionary) {
+        self.dictionary = dictionary
+        
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         

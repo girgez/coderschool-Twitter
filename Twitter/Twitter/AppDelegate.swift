@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        ProgressHUD.setup()
+        
+        if User.shared != nil && TwitterClient.shared.accessToken != nil {
+            let storybopard = UIStoryboard(name: "Main", bundle: nil)
+            let nc = storybopard.instantiateViewController(withIdentifier: "TweetsNavigationController")
+            window?.rootViewController = nc
+        }
+        
         return true
     }
 
@@ -44,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        TwitterClient.shared?.handleOpenUrl(url: url)
+        TwitterClient.shared.handleOpenUrl(url: url)
         
         return true
     }

@@ -16,15 +16,21 @@ PODS:
     - AFNetworking/NSURLSession
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
+  - SnapKit (3.0.2)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - BDBOAuth1Manager (~> 2.0)
+  - SnapKit (~> 3.0)
+  - SVProgressHUD (~> 2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 958a316161f97e7894f8b6fcee5f57bc4ccce32e
+PODFILE CHECKSUM: a3d376a57fc9ed6ce2591a2201e1122be89984e4
 
 COCOAPODS: 1.1.0.rc.3

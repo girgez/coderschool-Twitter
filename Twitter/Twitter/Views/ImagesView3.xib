@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImagesView3" customModule="Twitter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="302" height="201"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40v-ai-kOV">
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="40v-ai-kOV" secondAttribute="height" multiplier="1:1" id="Spq-WR-ZJT"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="XLV-Of-fve" appends="YES" id="lHo-hm-JGy"/>
+                    </connections>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-JU-GKM">
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="alZ-JU-GKM" secondAttribute="height" multiplier="1:1" id="JPU-LV-9H8"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="5Fg-vt-Iil" appends="YES" id="lr9-RY-Y60"/>
+                    </connections>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-k4-19s">
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Kjl-k4-19s" secondAttribute="height" multiplier="1:1" id="ZGU-hf-4zu"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lWm-c3-nBf" appends="YES" id="d8g-c9-Aji"/>
+                    </connections>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2vd-X3-X3K"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="height" secondItem="alZ-JU-GKM" secondAttribute="height" multiplier="2:1" constant="1" id="9KG-1p-Gya"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="top" secondItem="alZ-JU-GKM" secondAttribute="bottom" constant="1" id="AlG-b0-qeq"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="height" secondItem="alZ-JU-GKM" secondAttribute="height" id="Bsn-Q0-dP8"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cp9-RS-vzy"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="leading" secondItem="40v-ai-kOV" secondAttribute="trailing" constant="1" id="GSU-yU-Fuc"/>
+                <constraint firstAttribute="trailing" secondItem="alZ-JU-GKM" secondAttribute="trailing" id="I0r-Wh-v3b"/>
+                <constraint firstAttribute="bottom" secondItem="40v-ai-kOV" secondAttribute="bottom" id="Ipx-XM-beG"/>
+                <constraint firstAttribute="trailing" secondItem="Kjl-k4-19s" secondAttribute="trailing" id="Ubx-sC-6Ln"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="width" secondItem="alZ-JU-GKM" secondAttribute="width" multiplier="2:1" constant="1" id="YRX-lx-k3v"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2:3" constant="-1" id="kaH-Bt-V8o"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="width" secondItem="Kjl-k4-19s" secondAttribute="width" id="rrp-kc-9Ee"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uLU-Jg-qSL"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uef-Nv-bjp"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="leading" secondItem="40v-ai-kOV" secondAttribute="trailing" constant="1" id="wgl-DD-IhN"/>
+                <constraint firstAttribute="bottom" secondItem="Kjl-k4-19s" secondAttribute="bottom" id="ykD-0c-oqh"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tapImage3" destination="lWm-c3-nBf" id="Mm8-9p-YFj"/>
+                <outletCollection property="imagesView" destination="40v-ai-kOV" collectionClass="NSMutableArray" id="4mT-pL-oY6"/>
+                <outletCollection property="imagesView" destination="alZ-JU-GKM" collectionClass="NSMutableArray" id="fd5-kn-zdh"/>
+                <outletCollection property="imagesView" destination="Kjl-k4-19s" collectionClass="NSMutableArray" id="beG-jx-9Up"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="52.5"/>
+        </view>
+        <tapGestureRecognizer id="XLV-Of-fve">
+            <connections>
+                <action selector="tapImage1:" destination="iN0-l3-epB" id="lDh-6b-rSo"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="5Fg-vt-Iil">
+            <connections>
+                <action selector="tapImage2:" destination="iN0-l3-epB" id="vx0-d6-8oP"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="lWm-c3-nBf"/>
+    </objects>
+</document>
