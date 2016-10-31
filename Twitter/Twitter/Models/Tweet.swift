@@ -18,9 +18,12 @@ class Tweet: NSObject {
     var isRetweeted = false
     var isFavorited = false
     var imageUrls = [URL]()
-    var imageRatio = [CGFloat]()
+    var replyId: Int?
+    var reply = [Tweet]()
+    var dictionary: NSDictionary?
     
     init(dictionary: NSDictionary) {
+        self.dictionary = dictionary
         id = dictionary["id"] as? Int
         text = dictionary["text"] as? String
         if let timestampString = dictionary["created_at"] as? String {
@@ -39,14 +42,11 @@ class Tweet: NSObject {
             for image in media {
                 if let urlString = image["media_url_https"] as? String {
                     imageUrls.append(URL(string: "\(urlString):medium")!)
-                    if let size = image.value(forKeyPath: "sizes.medium") as? NSDictionary {
-                        imageRatio.append(CGFloat(size["w"] as! Int))
-                        imageRatio.append(CGFloat(size["h"] as! Int))
-                    }
-                    
                 }
             }
         }
+        
+        replyId = dictionary["in_reply_to_status_id"] as? Int
     }
     
     func createdAtString(short: Bool = true) -> String {

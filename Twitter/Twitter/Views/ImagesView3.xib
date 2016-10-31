@@ -13,19 +13,19 @@
             <rect key="frame" x="0.0" y="0.0" width="302" height="201"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40v-ai-kOV">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40v-ai-kOV">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="XLV-Of-fve" appends="YES" id="lHo-hm-JGy"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-JU-GKM">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-JU-GKM">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="5Fg-vt-Iil" appends="YES" id="lr9-RY-Y60"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-k4-19s">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-k4-19s">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="lWm-c3-nBf" appends="YES" id="d8g-c9-Aji"/>

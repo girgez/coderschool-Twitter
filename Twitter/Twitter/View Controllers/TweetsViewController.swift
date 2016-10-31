@@ -70,7 +70,19 @@ class TweetsViewController: UIViewController {
             vc.indexTweet = tableView.indexPathForSelectedRow?.row
             vc.tweet = tweets[vc.indexTweet]
             vc.delegate = self
+        } else if segue.identifier == "ReplySegue" {
+            let data = sender as! [AnyObject]
+            let nc = segue.destination as! UINavigationController
+            let vc = nc.topViewController as! NewTweetViewController
+            vc.tweet = data[0] as? Tweet
+            vc.index = data[1] as? Int
+            vc.delegate = self
         }
+    }
+    @IBAction func onLogout(_ sender: UIBarButtonItem) {
+        TwitterClient.shared.requestSerializer.removeAccessToken()
+        User.shared = nil
+        Common.setRootView(vcIdentifier: "LoginViewController")
     }
 }
 
@@ -119,12 +131,21 @@ extension TweetsViewController: TweetCellDelegate {
         let indexPath = IndexPath(row: cell.index, section: 0)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
+    
+    func tweetCell(reply cell: TweetCell) {
+        let data = [cell.tweet, cell.index! as AnyObject] as [AnyObject]
+        performSegue(withIdentifier: "ReplySegue", sender: data)
+    }
 }
 
 extension TweetsViewController: NewTweetViewControllerDelegate {
     func newTweet(tweet: Tweet) {
         tweets.insert(tweet, at: 0)
         tableView.reloadData()
+    }
+    
+    func newTweet(reply: Tweet, index: Int) {
+        tweets[index].reply.append(reply)
     }
 }
 
@@ -136,5 +157,9 @@ extension TweetsViewController: TweetViewControllerDelegate {
         tweets[viewController.indexTweet].retweetCount = viewController.tweet.retweetCount
         let indexPath = IndexPath(row: viewController.indexTweet, section: 0)
         tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func tweetViewController(reply viewController: TweetViewController) {
+        tweets[viewController.indexTweet].reply = viewController.tweet.reply
     }
 }

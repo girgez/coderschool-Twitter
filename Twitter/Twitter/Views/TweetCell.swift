@@ -10,8 +10,9 @@ import UIKit
 import SnapKit
 
 @objc protocol TweetCellDelegate {
-//    func tweetCell(cell: TweetCell, updateData: [String: AnyObject])
     func tweetCell(cell: TweetCell)
+    
+    func tweetCell(reply cell: TweetCell)
 }
 
 class TweetCell: UITableViewCell {
@@ -156,6 +157,6 @@ class TweetCell: UITableViewCell {
         }
     }
     @IBAction func onReply(_ sender: UIButton) {
-        
+        delegate.tweetCell(reply: self)
     }
 }

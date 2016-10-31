@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="454" height="217"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hp5-5o-zHN">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hp5-5o-zHN">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="eUC-1V-OsE" appends="YES" id="DXa-3u-fb6"/>

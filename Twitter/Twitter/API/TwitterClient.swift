@@ -62,13 +62,13 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         var parameters = [String : AnyObject]()
         
-        parameters["exclude_replies"] = false as AnyObject
+        parameters["exclude_replies"] = true as AnyObject
         
-//        if count != nil {
-//            parameters["count"] = count! as AnyObject
-//        } else {
-//            parameters["count"] = 22 as AnyObject
-//        }
+        if count != nil {
+            parameters["count"] = count! as AnyObject
+        } else {
+            parameters["count"] = 22 as AnyObject
+        }
         
         if maxId != nil {
             parameters["max_id"] = maxId! as AnyObject
@@ -79,7 +79,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         get("1.1/statuses/home_timeline.json", parameters: parameters, progress: nil, success: { (task, response) in
             let tweets: [Tweet]
             if let dictionaries = response as? [NSDictionary] {
-//                print(dictionaries)
+                print(dictionaries)
                 tweets = Tweet.tweetsArray(dictionarys: dictionaries)
             } else {
                 tweets = [Tweet]()
@@ -163,8 +163,15 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     // new tweet
-    func newTweet(text: String, success: @escaping (Tweet) -> Void, failure: ((Error) -> Void)? = nil) {
-        post("1.1/statuses/update.json", parameters: ["status" : text], progress: nil, success: { (task, response) -> Void in
+    func newTweet(text: String, replyId: Int?, success: @escaping (Tweet) -> Void, failure: ((Error) -> Void)? = nil) {
+        var parameters = [String: AnyObject]()
+        parameters["status"] = text as AnyObject
+        
+        if let replyId = replyId {
+            parameters["in_reply_to_status_id"] = replyId as AnyObject
+        }
+        
+        post("1.1/statuses/update.json", parameters: parameters, progress: nil, success: { (task, response) -> Void in
             
             let dictionary = response as! NSDictionary
             let tweet = Tweet(dictionary: dictionary)

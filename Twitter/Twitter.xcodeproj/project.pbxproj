@@ -18,6 +18,7 @@
 		00781C2D1DC68F04002B4A68 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C2C1DC68F04002B4A68 /* ProgressHUD.swift */; };
 		00781C311DC69B91002B4A68 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C301DC69B91002B4A68 /* InfiniteScrollActivityView.swift */; };
 		00781C331DC70731002B4A68 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C321DC70731002B4A68 /* TweetViewController.swift */; };
+		00781C351DC75199002B4A68 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C341DC75199002B4A68 /* Common.swift */; };
 		0089E4C31DC3C77600344B02 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089E4C21DC3C77600344B02 /* TweetCell.swift */; };
 		0089E4C51DC3C7B900344B02 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089E4C41DC3C7B900344B02 /* TweetsViewController.swift */; };
 		00CC8E461DC4870600A07EFC /* ImagesView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC8E451DC4870600A07EFC /* ImagesView1.swift */; };
@@ -47,6 +48,7 @@
 		00781C2C1DC68F04002B4A68 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = Common/ProgressHUD.swift; sourceTree = "<group>"; };
 		00781C301DC69B91002B4A68 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfiniteScrollActivityView.swift; path = Views/InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		00781C321DC70731002B4A68 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetViewController.swift; path = "View Controllers/TweetViewController.swift"; sourceTree = "<group>"; };
+		00781C341DC75199002B4A68 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = Common/Common.swift; sourceTree = "<group>"; };
 		0089E4C21DC3C77600344B02 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = Views/TweetCell.swift; sourceTree = "<group>"; };
 		0089E4C41DC3C7B900344B02 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsViewController.swift; path = "View Controllers/TweetsViewController.swift"; sourceTree = "<group>"; };
 		00CC8E451DC4870600A07EFC /* ImagesView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagesView1.swift; path = Views/ImagesView1.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				0037C8BA1DC5BF4300E12E0C /* LocalStorage.swift */,
 				00781C2C1DC68F04002B4A68 /* ProgressHUD.swift */,
+				00781C341DC75199002B4A68 /* Common.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00781C351DC75199002B4A68 /* Common.swift in Sources */,
 				00781C311DC69B91002B4A68 /* InfiniteScrollActivityView.swift in Sources */,
 				00E38E041DC3781900A8FFD2 /* TwitterClient.swift in Sources */,
 				001F8E121DC3406700FEBFA2 /* LoginViewController.swift in Sources */,

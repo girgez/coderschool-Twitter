@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol NewTweetViewControllerDelegate {
     func newTweet(tweet: Tweet)
+    func newTweet(reply: Tweet, index: Int)
 }
 
 class NewTweetViewController: UIViewController {
@@ -20,9 +21,12 @@ class NewTweetViewController: UIViewController {
     @IBOutlet weak var avatarView: UIImageView!
     @IBOutlet weak var tweetButton: UIButton!
     @IBOutlet weak var characterCountLabel: UILabel!
+    @IBOutlet weak var replyTitleContainer: UIView!
+    @IBOutlet weak var replyTitle: UILabel!
     
     weak var delegate: NewTweetViewControllerDelegate!
-    
+    var tweet: Tweet?
+    var index: Int?
     var characterCount = 140 {
         didSet{
             characterCountLabel.text = "\(characterCount)"
@@ -35,7 +39,15 @@ class NewTweetViewController: UIViewController {
         if let avatarUrl = User.shared?.profileImageUrl {
             avatarView.setImageWith(avatarUrl)
         }
-//        avatarView.setImageWith(User.shared!.profileImageUrl!)
+        
+        if let tweet = tweet {
+            navigationItem.title = "Reply"
+            tweetButton.setTitle("Reply", for: .disabled)
+            tweetButton.setTitle("Reply", for: .normal)
+            replyTitle.text = "Reply to \(tweet.user!.name!)"
+            replyTitleContainer.isHidden = false
+            textView.text = "@\(tweet.user!.screenname!) "
+        }
         
         // noti keyboard
         NotificationCenter.default.addObserver(
@@ -77,13 +89,25 @@ class NewTweetViewController: UIViewController {
     @IBAction func onTweetButton(_ sender: UIButton) {
         textView.resignFirstResponder()
         ProgressHUD.show()
-        TwitterClient.shared.newTweet(text: textView.text, success: { (tweet) in
-            self.delegate.newTweet(tweet: tweet)
-            ProgressHUD.dismiss()
-            self.dismiss(animated: true, completion: nil)
-            }, failure: {(error) -> Void in
+        if let tweet = tweet {
+            TwitterClient.shared.newTweet(text: textView.text, replyId: tweet.replyId ?? tweet.id, success: { (tweet) in
+//                tweet.text = self.textView.text
+                self.delegate.newTweet(reply: tweet, index: self.index!)
                 ProgressHUD.dismiss()
-        })
+                self.dismiss(animated: true, completion: nil)
+                }, failure: {(error) -> Void in
+                    ProgressHUD.dismiss()
+            })
+        } else {
+            TwitterClient.shared.newTweet(text: textView.text, replyId: nil, success: { (tweet) in
+                self.delegate.newTweet(tweet: tweet)
+                ProgressHUD.dismiss()
+                self.dismiss(animated: true, completion: nil)
+                }, failure: {(error) -> Void in
+                    ProgressHUD.dismiss()
+            })
+        }
+        
     }
     
     @IBAction func onCancel(_ sender: UIBarButtonItem) {

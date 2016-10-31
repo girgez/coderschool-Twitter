@@ -13,25 +13,25 @@
             <rect key="frame" x="0.0" y="0.0" width="403" height="302"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ft8-6S-qzI" userLabel="image1">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ft8-6S-qzI" userLabel="image1">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="Ly5-sf-QJk" appends="YES" id="poo-33-i9Q"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-4b-Ijz" userLabel="image2">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-4b-Ijz" userLabel="image2">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="5fu-jC-dax" appends="YES" id="rs8-Fl-3wM"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z19-mw-5XI" userLabel="image3">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z19-mw-5XI" userLabel="image3">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="725-fT-XxO" appends="YES" id="Yd2-VT-QgZ"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jET-LC-LbO" userLabel="image4">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jET-LC-LbO" userLabel="image4">
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="38M-fc-dQV" appends="YES" id="rvX-FS-xmO"/>

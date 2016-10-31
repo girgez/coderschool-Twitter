@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+
 class ImagesView1: UIView {
     @IBOutlet weak var imageView: UIImageView!
     
