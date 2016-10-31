@@ -16,6 +16,8 @@
 		001F8E191DC35A8700FEBFA2 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F8E181DC35A8700FEBFA2 /* Tweet.swift */; };
 		0037C8BB1DC5BF4300E12E0C /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037C8BA1DC5BF4300E12E0C /* LocalStorage.swift */; };
 		00781C2D1DC68F04002B4A68 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C2C1DC68F04002B4A68 /* ProgressHUD.swift */; };
+		00781C311DC69B91002B4A68 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C301DC69B91002B4A68 /* InfiniteScrollActivityView.swift */; };
+		00781C331DC70731002B4A68 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00781C321DC70731002B4A68 /* TweetViewController.swift */; };
 		0089E4C31DC3C77600344B02 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089E4C21DC3C77600344B02 /* TweetCell.swift */; };
 		0089E4C51DC3C7B900344B02 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0089E4C41DC3C7B900344B02 /* TweetsViewController.swift */; };
 		00CC8E461DC4870600A07EFC /* ImagesView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CC8E451DC4870600A07EFC /* ImagesView1.swift */; };
@@ -43,6 +45,8 @@
 		001F8E181DC35A8700FEBFA2 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tweet.swift; path = Models/Tweet.swift; sourceTree = "<group>"; };
 		0037C8BA1DC5BF4300E12E0C /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalStorage.swift; path = Common/LocalStorage.swift; sourceTree = "<group>"; };
 		00781C2C1DC68F04002B4A68 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = Common/ProgressHUD.swift; sourceTree = "<group>"; };
+		00781C301DC69B91002B4A68 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfiniteScrollActivityView.swift; path = Views/InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		00781C321DC70731002B4A68 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetViewController.swift; path = "View Controllers/TweetViewController.swift"; sourceTree = "<group>"; };
 		0089E4C21DC3C77600344B02 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = Views/TweetCell.swift; sourceTree = "<group>"; };
 		0089E4C41DC3C7B900344B02 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsViewController.swift; path = "View Controllers/TweetsViewController.swift"; sourceTree = "<group>"; };
 		00CC8E451DC4870600A07EFC /* ImagesView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagesView1.swift; path = Views/ImagesView1.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				001F8E111DC3406700FEBFA2 /* LoginViewController.swift */,
 				0089E4C41DC3C7B900344B02 /* TweetsViewController.swift */,
 				00F1BE421DC677950031AD44 /* NewTweetViewController.swift */,
+				00781C321DC70731002B4A68 /* TweetViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				00CC8E571DC48EF900A07EFC /* ImagesView3.xib */,
 				00CC8E5B1DC48F1500A07EFC /* ImagesView4.swift */,
 				00CC8E551DC48EDA00A07EFC /* ImagesView4.xib */,
+				00781C301DC69B91002B4A68 /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00781C311DC69B91002B4A68 /* InfiniteScrollActivityView.swift in Sources */,
 				00E38E041DC3781900A8FFD2 /* TwitterClient.swift in Sources */,
 				001F8E121DC3406700FEBFA2 /* LoginViewController.swift in Sources */,
 				001F8DFF1DC33E9E00FEBFA2 /* AppDelegate.swift in Sources */,
@@ -315,6 +322,7 @@
 				001F8E171DC353A900FEBFA2 /* User.swift in Sources */,
 				00CC8E461DC4870600A07EFC /* ImagesView1.swift in Sources */,
 				00F1BE431DC677950031AD44 /* NewTweetViewController.swift in Sources */,
+				00781C331DC70731002B4A68 /* TweetViewController.swift in Sources */,
 				0037C8BB1DC5BF4300E12E0C /* LocalStorage.swift in Sources */,
 				00CC8E5C1DC48F1500A07EFC /* ImagesView4.swift in Sources */,
 				001F8E191DC35A8700FEBFA2 /* Tweet.swift in Sources */,

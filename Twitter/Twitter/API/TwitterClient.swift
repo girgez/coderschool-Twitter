@@ -62,11 +62,13 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         var parameters = [String : AnyObject]()
         
-        if count != nil {
-            parameters["count"] = count! as AnyObject
-        } else {
-            parameters["count"] = 22 as AnyObject
-        }
+        parameters["exclude_replies"] = false as AnyObject
+        
+//        if count != nil {
+//            parameters["count"] = count! as AnyObject
+//        } else {
+//            parameters["count"] = 22 as AnyObject
+//        }
         
         if maxId != nil {
             parameters["max_id"] = maxId! as AnyObject
@@ -75,8 +77,14 @@ class TwitterClient: BDBOAuth1SessionManager {
         print(parameters)
         
         get("1.1/statuses/home_timeline.json", parameters: parameters, progress: nil, success: { (task, response) in
-            let dictionaries = response as! [NSDictionary]
-            let tweets = Tweet.tweetsArray(dictionarys: dictionaries)
+            let tweets: [Tweet]
+            if let dictionaries = response as? [NSDictionary] {
+//                print(dictionaries)
+                tweets = Tweet.tweetsArray(dictionarys: dictionaries)
+            } else {
+                tweets = [Tweet]()
+            }
+            
             success(tweets)
         }) { (task, error) in
             print("home timeline failed \(error.localizedDescription)")
@@ -133,8 +141,8 @@ class TwitterClient: BDBOAuth1SessionManager {
             
             let dictionary = response as! NSDictionary
             print(dictionary)
-//            let tweet = Tweet(dictionary: dictionary)
-            
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
             }, failure: { (task, error) -> Void in
                 print("retweet error: \(error.localizedDescription)")
                 failure?(error)
@@ -142,14 +150,14 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     
     func unRetweet(id: Int, success: @escaping (Tweet) -> Void, failure: ((Error) -> Void)? = nil) {
-        post("1.1/statuses/destroy/\(id).json", parameters: nil, progress: nil, success: { (task, response) -> Void in
+        post("1.1/statuses/unretweet/\(id).json", parameters: nil, progress: nil, success: { (task, response) -> Void in
             
             let dictionary = response as! NSDictionary
             print(dictionary)
-//            let tweet = Tweet(dictionary: dictionary)
-            
+            let tweet = Tweet(dictionary: dictionary)
+            success(tweet)
             }, failure: { (task, error) -> Void in
-                print("retweet error: \(error.localizedDescription)")
+                print("unretweet error: \(error.localizedDescription)")
                 failure?(error)
         })
     }

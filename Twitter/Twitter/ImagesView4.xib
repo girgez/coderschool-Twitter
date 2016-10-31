@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,62 +13,49 @@
             <rect key="frame" x="0.0" y="0.0" width="403" height="302"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ft8-6S-qzI">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ft8-6S-qzI" userLabel="image1">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ft8-6S-qzI" secondAttribute="height" multiplier="1:1" id="aAh-9o-cxf"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="Ly5-sf-QJk" appends="YES" id="poo-33-i9Q"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-4b-Ijz">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cq-4b-Ijz" userLabel="image2">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="6cq-4b-Ijz" secondAttribute="height" multiplier="1:1" id="Nqf-Dw-PMn"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="5fu-jC-dax" appends="YES" id="rs8-Fl-3wM"/>
                     </connections>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jET-LC-LbO">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z19-mw-5XI" userLabel="image3">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="jET-LC-LbO" secondAttribute="height" multiplier="1:1" id="SVq-yp-8t7"/>
-                    </constraints>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="38M-fc-dQV" appends="YES" id="rvX-FS-xmO"/>
-                    </connections>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z19-mw-5XI">
-                    <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Z19-mw-5XI" secondAttribute="height" multiplier="1:1" id="kvL-41-UNe"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="725-fT-XxO" appends="YES" id="Yd2-VT-QgZ"/>
+                    </connections>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jET-LC-LbO" userLabel="image4">
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="38M-fc-dQV" appends="YES" id="rvX-FS-xmO"/>
                     </connections>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jET-LC-LbO" firstAttribute="leading" secondItem="6cq-4b-Ijz" secondAttribute="leading" id="0Vm-Yp-q7U"/>
-                <constraint firstAttribute="trailing" secondItem="6cq-4b-Ijz" secondAttribute="trailing" id="5dk-nk-OBt"/>
-                <constraint firstItem="jET-LC-LbO" firstAttribute="height" secondItem="6cq-4b-Ijz" secondAttribute="height" id="6Mm-ev-3fN"/>
-                <constraint firstItem="6cq-4b-Ijz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8BF-cj-hHs"/>
-                <constraint firstItem="Z19-mw-5XI" firstAttribute="height" secondItem="6cq-4b-Ijz" secondAttribute="height" id="8Mz-oH-6uo"/>
-                <constraint firstItem="jET-LC-LbO" firstAttribute="top" secondItem="Z19-mw-5XI" secondAttribute="bottom" constant="1" id="Cdh-0q-NuY"/>
-                <constraint firstAttribute="trailing" secondItem="jET-LC-LbO" secondAttribute="trailing" id="Ffk-QC-s7C"/>
-                <constraint firstAttribute="bottom" secondItem="ft8-6S-qzI" secondAttribute="bottom" id="QMr-MQ-pEm"/>
-                <constraint firstItem="ft8-6S-qzI" firstAttribute="height" secondItem="6cq-4b-Ijz" secondAttribute="height" multiplier="3:1" constant="2" id="UZM-Nh-0An"/>
-                <constraint firstItem="ft8-6S-qzI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WcK-Bc-bNa"/>
-                <constraint firstItem="ft8-6S-qzI" firstAttribute="width" secondItem="6cq-4b-Ijz" secondAttribute="width" multiplier="3:1" constant="2" id="dkr-Iu-5yU"/>
-                <constraint firstAttribute="bottom" secondItem="jET-LC-LbO" secondAttribute="bottom" id="gd2-9G-4sM"/>
-                <constraint firstItem="6cq-4b-Ijz" firstAttribute="leading" secondItem="ft8-6S-qzI" secondAttribute="trailing" constant="1" id="iF2-GC-43t"/>
-                <constraint firstItem="ft8-6S-qzI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nY0-0i-lcB"/>
-                <constraint firstItem="Z19-mw-5XI" firstAttribute="top" secondItem="6cq-4b-Ijz" secondAttribute="bottom" constant="1" id="nwb-74-pgF"/>
-                <constraint firstItem="Z19-mw-5XI" firstAttribute="leading" secondItem="6cq-4b-Ijz" secondAttribute="leading" id="vwN-gQ-VcV"/>
-                <constraint firstAttribute="trailing" secondItem="Z19-mw-5XI" secondAttribute="trailing" id="zi1-Xf-hPZ"/>
+                <constraint firstItem="ft8-6S-qzI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1vA-w6-EoC"/>
+                <constraint firstAttribute="bottom" secondItem="jET-LC-LbO" secondAttribute="bottom" id="6OS-Ab-Hkk"/>
+                <constraint firstItem="jET-LC-LbO" firstAttribute="height" secondItem="ft8-6S-qzI" secondAttribute="height" id="C5V-3e-zMa"/>
+                <constraint firstAttribute="trailing" secondItem="6cq-4b-Ijz" secondAttribute="trailing" id="CWu-wO-dhN"/>
+                <constraint firstItem="Z19-mw-5XI" firstAttribute="height" secondItem="ft8-6S-qzI" secondAttribute="height" id="FHF-1H-FCi"/>
+                <constraint firstAttribute="bottom" secondItem="Z19-mw-5XI" secondAttribute="bottom" id="Fz0-fp-8p4"/>
+                <constraint firstItem="6cq-4b-Ijz" firstAttribute="height" secondItem="ft8-6S-qzI" secondAttribute="height" id="QgR-eV-948"/>
+                <constraint firstItem="Z19-mw-5XI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R0E-eR-VJ7"/>
+                <constraint firstItem="ft8-6S-qzI" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1:2" constant="-1" id="fNH-9c-G4R"/>
+                <constraint firstItem="6cq-4b-Ijz" firstAttribute="width" secondItem="ft8-6S-qzI" secondAttribute="width" id="fuw-eq-jRD"/>
+                <constraint firstItem="6cq-4b-Ijz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h2q-Ry-v3Y"/>
+                <constraint firstItem="ft8-6S-qzI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:2" constant="-1" id="mtG-9r-cHo"/>
+                <constraint firstItem="jET-LC-LbO" firstAttribute="width" secondItem="ft8-6S-qzI" secondAttribute="width" id="q7t-Bt-uee"/>
+                <constraint firstItem="Z19-mw-5XI" firstAttribute="width" secondItem="ft8-6S-qzI" secondAttribute="width" id="uZU-45-Mbt"/>
+                <constraint firstAttribute="trailing" secondItem="jET-LC-LbO" secondAttribute="trailing" id="ulZ-Ad-mAM"/>
+                <constraint firstItem="ft8-6S-qzI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wqD-LS-cWM"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

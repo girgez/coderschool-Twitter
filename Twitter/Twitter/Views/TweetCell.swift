@@ -25,7 +25,9 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var retweetImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var heightConstraintImageContainer: NSLayoutConstraint!
     
+    var inTweetViewController: Bool!
     weak var delegate: TweetCellDelegate!
     var index: Int!
     var tweet: Tweet! {
@@ -40,7 +42,13 @@ class TweetCell: UITableViewCell {
         }
         nameLabel.text = tweet.user?.name
         usernameLabel.text = "@\(tweet.user!.screenname!)"
-        timeLabel.text = "- \(tweet.createdAtString!)"
+        
+        if inTweetViewController! {
+            timeLabel.text = "\(tweet.createdAtString(short: false))"
+        } else {
+            timeLabel.text = "- \(tweet.createdAtString(short: true))"
+        }
+        
         contentLabel.text = tweet.text
         
         retweetImageView.image = tweet.isRetweeted ? #imageLiteral(resourceName: "Retweeted") : #imageLiteral(resourceName: "Retweet")
@@ -49,14 +57,11 @@ class TweetCell: UITableViewCell {
         likeImageView.image = tweet.isFavorited ? #imageLiteral(resourceName: "Liked") : #imageLiteral(resourceName: "Like")
         likesCountLabel.text = tweet.favoritesCount! > 0 ? "\(tweet.favoritesCount!)" : ""
         
-        imageContainer.snp.remakeConstraints({
-            $0.height.greaterThanOrEqualTo(0)
-        })
+        heightConstraintImageContainer.constant = 160
         switch tweet.imageUrls.count {
         case 1:
             let imagesView = Bundle.main.loadNibNamed("ImagesView1", owner: self, options: nil)!.first! as! ImagesView1
             imagesView.imageUrl = tweet.imageUrls[0]
-            imagesView.imageRatio = tweet.imageRatio
             imageContainer.addSubview(imagesView)
             imagesView.snp.makeConstraints({
                 $0.top.equalToSuperview()
@@ -64,6 +69,7 @@ class TweetCell: UITableViewCell {
                 $0.bottom.equalToSuperview()
                 $0.right.equalToSuperview()
             })
+            heightConstraintImageContainer.constant = 120
         case 2:
             let imagesView = Bundle.main.loadNibNamed("ImagesView2", owner: self, options: nil)!.first! as! ImagesView2
             imagesView.imageUrls = tweet.imageUrls
@@ -95,13 +101,10 @@ class TweetCell: UITableViewCell {
                 $0.right.equalToSuperview()
             })
         default:
-//            imageContainer.frame.size = CGSize(width: imageContainer.frame.width, height: 0)
             imageContainer.subviews.forEach({
                 $0.removeFromSuperview()
             })
-            imageContainer.snp.remakeConstraints({
-                $0.height.equalTo(0)
-            })
+            heightConstraintImageContainer.constant = 0
         }
     }
     
@@ -121,14 +124,18 @@ class TweetCell: UITableViewCell {
     }
 
     @IBAction func onRetweet(_ sender: UIButton) {
-        print("retweet")
-        if tweet.isRetweeted {
+        if !tweet.isRetweeted {
             TwitterClient.shared.retweet(id: tweet.id!, success: { (tweet) in
-                
+                print("retweet")
+                self.tweet.isRetweeted = tweet.isRetweeted
+                self.tweet.retweetCount = tweet.retweetCount
+                self.delegate.tweetCell(cell: self)
             })
         } else {
             TwitterClient.shared.unRetweet(id: tweet.id!, success: { (tweet) in
-                
+                self.tweet.isRetweeted = false
+                self.tweet.retweetCount = tweet.retweetCount! - 1
+                self.delegate.tweetCell(cell: self)
             })
         }
     }
@@ -138,18 +145,17 @@ class TweetCell: UITableViewCell {
             TwitterClient.shared.unLikeTweet(id: tweet.id!, success: { (tweet) in
                 self.tweet.isFavorited = tweet.isFavorited
                 self.tweet.favoritesCount = tweet.favoritesCount
-                self.likeImageView.image = tweet.isFavorited ? #imageLiteral(resourceName: "Liked") : #imageLiteral(resourceName: "Like")
-                self.likesCountLabel.text = tweet.favoritesCount! > 0 ? "\(tweet.favoritesCount!)" : ""
                 self.delegate.tweetCell(cell: self)
             })
         } else {
             TwitterClient.shared.likeTweet(id: tweet.id!, success: { (tweet) in
                 self.tweet.isFavorited = tweet.isFavorited
                 self.tweet.favoritesCount = tweet.favoritesCount
-                self.likeImageView.image = tweet.isFavorited ? #imageLiteral(resourceName: "Liked") : #imageLiteral(resourceName: "Like")
-                self.likesCountLabel.text = tweet.favoritesCount! > 0 ? "\(tweet.favoritesCount!)" : ""
                 self.delegate.tweetCell(cell: self)
             })
         }
+    }
+    @IBAction func onReply(_ sender: UIButton) {
+        
     }
 }

@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,18 +15,12 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-RR-5bZ">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="nfq-RR-5bZ" secondAttribute="height" multiplier="1:1" id="pIh-7F-PPT"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="F4j-jd-A1e" appends="YES" id="njz-no-hU7"/>
                     </connections>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJw-3H-gjQ">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="tJw-3H-gjQ" secondAttribute="height" multiplier="1:1" id="bGy-su-eqK"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="Cod-aZ-QCw" appends="YES" id="eBh-i0-Rxl"/>
                     </connections>
@@ -34,14 +28,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tJw-3H-gjQ" firstAttribute="width" secondItem="nfq-RR-5bZ" secondAttribute="width" id="AkP-8m-Ogv"/>
-                <constraint firstAttribute="bottom" secondItem="tJw-3H-gjQ" secondAttribute="bottom" id="NCY-Cz-a75"/>
-                <constraint firstItem="tJw-3H-gjQ" firstAttribute="leading" secondItem="nfq-RR-5bZ" secondAttribute="trailing" constant="1" id="Ohe-Kz-TzG"/>
-                <constraint firstItem="nfq-RR-5bZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OtU-Qu-Ap3"/>
-                <constraint firstItem="tJw-3H-gjQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PGB-h5-K73"/>
-                <constraint firstAttribute="bottom" secondItem="nfq-RR-5bZ" secondAttribute="bottom" id="SBM-pP-wnD"/>
-                <constraint firstItem="nfq-RR-5bZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dqO-7x-363"/>
-                <constraint firstAttribute="trailing" secondItem="tJw-3H-gjQ" secondAttribute="trailing" id="jtj-Th-yo8"/>
+                <constraint firstAttribute="bottom" secondItem="tJw-3H-gjQ" secondAttribute="bottom" id="ADc-11-e3x"/>
+                <constraint firstItem="nfq-RR-5bZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fij-bq-nb4"/>
+                <constraint firstItem="tJw-3H-gjQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:2" constant="-1" id="HG1-xH-SBd"/>
+                <constraint firstItem="tJw-3H-gjQ" firstAttribute="leading" secondItem="nfq-RR-5bZ" secondAttribute="trailing" constant="1" id="Nuj-2n-wZ6"/>
+                <constraint firstItem="tJw-3H-gjQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UVz-rN-JyQ"/>
+                <constraint firstItem="nfq-RR-5bZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:2" constant="-1" id="iUv-8N-uc0"/>
+                <constraint firstAttribute="bottom" secondItem="nfq-RR-5bZ" secondAttribute="bottom" id="lhy-Ps-pfm"/>
+                <constraint firstAttribute="trailing" secondItem="tJw-3H-gjQ" secondAttribute="trailing" id="m1c-GH-umG"/>
+                <constraint firstItem="nfq-RR-5bZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qzs-TU-rQa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

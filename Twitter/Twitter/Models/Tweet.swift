@@ -12,40 +12,6 @@ class Tweet: NSObject {
     var id: Int?
     var text: String?
     var createdAt: Date?
-    var createdAtString: String? {
-        get{
-            let min = 60
-            let hour = min * 60
-            let day = hour * 24
-            let week = day * 7
-            let year = day * 365
-            let elapsedTime = Date().timeIntervalSince(createdAt!)
-            let duration = Int(elapsedTime)
-            
-            if duration < min {
-                return "\(duration)s"
-            } else if duration < hour {
-                let minDur = duration / min
-                return "\(minDur)m"
-            } else if duration < day {
-                let hourDur = duration / hour
-                return "\(hourDur)h"
-            } else if duration < week {
-                let dayDur = duration / day
-                return "\(dayDur)d"
-            } else if duration < year {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dMMM"
-                let dateString = dateFormatter.string(from: createdAt!)
-                return dateString
-            } else {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dMMM y"
-                let dateString = dateFormatter.string(from: createdAt!)
-                return dateString
-            }
-        }
-    }
     var retweetCount: Int?
     var favoritesCount: Int?
     var user: User?
@@ -80,6 +46,56 @@ class Tweet: NSObject {
                     
                 }
             }
+        }
+    }
+    
+    func createdAtString(short: Bool = true) -> String {
+        var secondLabel: String
+        var minuteLabel: String
+        var hourLabel: String
+        var dayLabel: String
+        
+        if short {
+            secondLabel = "s"
+            minuteLabel = "m"
+            hourLabel = "h"
+            dayLabel = "d"
+        } else {
+            secondLabel = " seconds ago"
+            minuteLabel = " mimutes ago"
+            hourLabel = " hours ago"
+            dayLabel = " days ago"
+        }
+        
+        let min = 60
+        let hour = min * 60
+        let day = hour * 24
+        let week = day * 7
+        let year = day * 365
+        let elapsedTime = Date().timeIntervalSince(createdAt!)
+        let duration = Int(elapsedTime)
+        
+        if duration < min {
+            return "\(duration)\(secondLabel)"
+        } else if duration < hour {
+            let minDur = duration / min
+            return "\(minDur)\(minuteLabel)"
+        } else if duration < day {
+            let hourDur = duration / hour
+            return "\(hourDur)\(hourLabel)"
+        } else if duration < week {
+            let dayDur = duration / day
+            return "\(dayDur)\(dayLabel)"
+        } else if duration < year {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dMMM"
+            let dateString = dateFormatter.string(from: createdAt!)
+            return dateString
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dMMM y"
+            let dateString = dateFormatter.string(from: createdAt!)
+            return dateString
         }
     }
     

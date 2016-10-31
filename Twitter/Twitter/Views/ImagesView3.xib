@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,27 +15,18 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="40v-ai-kOV">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="40v-ai-kOV" secondAttribute="height" multiplier="1:1" id="Spq-WR-ZJT"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="XLV-Of-fve" appends="YES" id="lHo-hm-JGy"/>
                     </connections>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="alZ-JU-GKM">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="alZ-JU-GKM" secondAttribute="height" multiplier="1:1" id="JPU-LV-9H8"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="5Fg-vt-Iil" appends="YES" id="lr9-RY-Y60"/>
                     </connections>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-k4-19s">
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Kjl-k4-19s" secondAttribute="height" multiplier="1:1" id="ZGU-hf-4zu"/>
-                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="lWm-c3-nBf" appends="YES" id="d8g-c9-Aji"/>
                     </connections>
@@ -44,22 +34,21 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2vd-X3-X3K"/>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="height" secondItem="alZ-JU-GKM" secondAttribute="height" multiplier="2:1" constant="1" id="9KG-1p-Gya"/>
-                <constraint firstItem="Kjl-k4-19s" firstAttribute="top" secondItem="alZ-JU-GKM" secondAttribute="bottom" constant="1" id="AlG-b0-qeq"/>
-                <constraint firstItem="Kjl-k4-19s" firstAttribute="height" secondItem="alZ-JU-GKM" secondAttribute="height" id="Bsn-Q0-dP8"/>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cp9-RS-vzy"/>
-                <constraint firstItem="alZ-JU-GKM" firstAttribute="leading" secondItem="40v-ai-kOV" secondAttribute="trailing" constant="1" id="GSU-yU-Fuc"/>
-                <constraint firstAttribute="trailing" secondItem="alZ-JU-GKM" secondAttribute="trailing" id="I0r-Wh-v3b"/>
-                <constraint firstAttribute="bottom" secondItem="40v-ai-kOV" secondAttribute="bottom" id="Ipx-XM-beG"/>
-                <constraint firstAttribute="trailing" secondItem="Kjl-k4-19s" secondAttribute="trailing" id="Ubx-sC-6Ln"/>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="width" secondItem="alZ-JU-GKM" secondAttribute="width" multiplier="2:1" constant="1" id="YRX-lx-k3v"/>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2:3" constant="-1" id="kaH-Bt-V8o"/>
-                <constraint firstItem="alZ-JU-GKM" firstAttribute="width" secondItem="Kjl-k4-19s" secondAttribute="width" id="rrp-kc-9Ee"/>
-                <constraint firstItem="40v-ai-kOV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uLU-Jg-qSL"/>
-                <constraint firstItem="alZ-JU-GKM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uef-Nv-bjp"/>
-                <constraint firstItem="Kjl-k4-19s" firstAttribute="leading" secondItem="40v-ai-kOV" secondAttribute="trailing" constant="1" id="wgl-DD-IhN"/>
-                <constraint firstAttribute="bottom" secondItem="Kjl-k4-19s" secondAttribute="bottom" id="ykD-0c-oqh"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:3" constant="-1" id="BbP-DP-IMK"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="F27-fl-SdM"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1:2" constant="-1" id="FqN-gK-lTh"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="top" secondItem="alZ-JU-GKM" secondAttribute="bottom" constant="1" id="HzH-xu-pfV"/>
+                <constraint firstAttribute="bottom" secondItem="Kjl-k4-19s" secondAttribute="bottom" id="Jy1-88-5bn"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2:3" constant="-1" id="S3W-1d-LEb"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="cbx-8d-0Tr"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="width" secondItem="alZ-JU-GKM" secondAttribute="width" id="dry-dg-rXs"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gwU-0X-sL0"/>
+                <constraint firstItem="alZ-JU-GKM" firstAttribute="leading" secondItem="40v-ai-kOV" secondAttribute="trailing" constant="1" id="hdO-dU-a9s"/>
+                <constraint firstAttribute="trailing" secondItem="alZ-JU-GKM" secondAttribute="trailing" id="oJO-sl-fXc"/>
+                <constraint firstItem="Kjl-k4-19s" firstAttribute="height" secondItem="alZ-JU-GKM" secondAttribute="height" id="oMe-NZ-gZD"/>
+                <constraint firstItem="40v-ai-kOV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="s7a-uH-mIm"/>
+                <constraint firstAttribute="bottom" secondItem="40v-ai-kOV" secondAttribute="bottom" id="tiv-HY-ld4"/>
+                <constraint firstAttribute="trailing" secondItem="Kjl-k4-19s" secondAttribute="trailing" id="v7c-GI-Xkn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
